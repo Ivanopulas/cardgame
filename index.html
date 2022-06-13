@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Game</title>
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
+
+</head>
+
+<body>
+
+  <section class="game">
+
+    <h1 class="game__heading">Игра в пары</h1>
+
+    <div class="game__form">
+      <label class="game__label" for="column-count">Кол-во карточек по горизонтали
+        <input class="game__input" type="number" name="column-count" id="column-count">
+      </label>
+      <label class="game__label" for="row-count">Кол-во карточек по вертикали
+        <input class="game__input" type="number" name="row-count" id="row-count">
+      </label>
+      <button class="game__btn" id="btn-start">Начать игру</button>
+    </div>
+
+    <ul class="game__field" id="game-field">
+    </ul>
+
+    <div class="game__shirm visually-hidden">
+      <button class="game__btn" id="btn-more">Сыграть ещё раз</button>
+    </div>
+
+  </section>
+
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+* {
+  font-family: sans-serif;
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+.game {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding-top: 20px;
+  max-width: 1200px;
+  min-height: 100vh;
+  background-image: url(img/field.webp);
+  background-size: cover;
+  background-position: center center;
+}
+
+.game__shirm {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  opacity: 1;
+  transition: opacity .5s ease;
+}
+
+.game__shirm.visually-hidden {
+  opacity: 0;
+}
+
+.game__heading {
+  font-size: 40px;
+  color: wheat;
+}
+
+.game__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  margin: 20px auto 20px;
+  height: 150px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  font-size: 20px;
+  color: wheat;
+
+}
+
+.game__label {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game__input {
+  margin-left: 20px;
+  width: 100px;
+  padding: 4px 10px;
+  text-align: center;
+  background-color: transparent;
+  border: 2px solid wheat;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+  cursor: text;
+}
+
+.game__btn {
+  padding: 4px 10px;
+  border: 2px solid wheat;
+  background-color: transparent;
+  border-radius: 5px;
+  font-size: 20px;
+  color: wheat;
+  cursor: pointer;
+  transition-property: color, background-color, transform;
+  transition-duration: .2s;
+  transition-timing-function: ease;
+}
+
+.game__btn:hover {
+  color: black;
+  background-color: wheat;
+}
+
+.game__btn:active {
+  color: red;
+  background-color: transparent;
+}
+
+.game__field {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0 auto 20px auto;
+  list-style: none;
+}
+
+.game__card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 5px;
+  width: 60px;
+  height: 100px;
+  border: 1px dotted green;
+  font-size: 0;
+  font-weight: bold;
+  transform: translateY(0) scaleX(-1);
+  transition: transform .5s ease, font-size .12s .25s ease;
+  border-radius: 5px;
+  background-image: url(img/card.webp);
+  background-size: cover;
+  background-position: center center;
+}
+
+.game__card.open {
+  font-size: 40px;
+  transform: scaleX(1);
+}
+
+.game__card:hover {
+  transform: translateY(-10px) scaleX(-1);
+}
+
+.game__card.open:hover {
+  transform: translateY(-10px) scaleX(1);
+}
